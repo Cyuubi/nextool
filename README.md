@@ -1,3 +1,4 @@
+## NOTE: This only supports V0 packets, as of right now!
 # nextool
 An easy to use tool for reading PRUDP/NEX packets. (WinForms)
 
