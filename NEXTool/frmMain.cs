@@ -80,7 +80,9 @@ namespace NEXTool
             {
                 _packet.ParseRaw(StringToByteArray(_messages[listBox1.SelectedIndex].Data));
 
+                label13.Text = $"SrcType: {_packet.SourceType}";
                 label3.Text = $"Src: {_packet.Source}";
+                label14.Text = $"DstType: {_packet.DestinationType}";
                 label4.Text = $"Dst: {_packet.Destination}";
                 textBox1.Text = _packet.Flags.ToString();
                 label6.Text = $"Type: {_packet.Type}";

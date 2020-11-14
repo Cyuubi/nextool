@@ -33,6 +33,8 @@ namespace NEXTool
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -57,9 +59,9 @@ namespace NEXTool
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(221, 12);
+            this.listBox1.Location = new System.Drawing.Point(331, 12);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(401, 319);
+            this.listBox1.Size = new System.Drawing.Size(401, 364);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -78,12 +80,14 @@ namespace NEXTool
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(117, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 15);
+            this.label2.Size = new System.Drawing.Size(37, 15);
             this.label2.TabIndex = 2;
-            this.label2.Text = "for private usage.";
+            this.label2.Text = "v1.0.1";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label12);
@@ -100,16 +104,34 @@ namespace NEXTool
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(12, 70);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(203, 261);
+            this.groupBox1.Size = new System.Drawing.Size(313, 306);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Inspect";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(144, 34);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(60, 15);
+            this.label14.TabIndex = 15;
+            this.label14.Text = "DstType: ?";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(144, 19);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(59, 15);
+            this.label13.TabIndex = 14;
+            this.label13.Text = "SrcType: ?";
+            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(6, 203);
+            this.button3.Location = new System.Drawing.Point(6, 247);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(191, 23);
+            this.button3.Size = new System.Drawing.Size(301, 23);
             this.button3.TabIndex = 13;
             this.button3.Text = "Extract Payload (Decrypted)";
             this.button3.UseVisualStyleBackColor = true;
@@ -117,16 +139,16 @@ namespace NEXTool
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(41, 174);
+            this.textBox2.Location = new System.Drawing.Point(41, 218);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(156, 23);
+            this.textBox2.Size = new System.Drawing.Size(266, 23);
             this.textBox2.TabIndex = 12;
             this.textBox2.Text = "CD&ML";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 177);
+            this.label12.Location = new System.Drawing.Point(6, 221);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(29, 15);
             this.label12.TabIndex = 11;
@@ -134,9 +156,9 @@ namespace NEXTool
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(6, 232);
+            this.button2.Location = new System.Drawing.Point(6, 276);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(191, 23);
+            this.button2.Size = new System.Drawing.Size(301, 23);
             this.button2.TabIndex = 10;
             this.button2.Text = "Extract Payload (Encrypted)";
             this.button2.UseVisualStyleBackColor = true;
@@ -145,7 +167,7 @@ namespace NEXTool
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 147);
+            this.label11.Location = new System.Drawing.Point(6, 148);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(81, 15);
             this.label11.TabIndex = 9;
@@ -154,7 +176,7 @@ namespace NEXTool
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 132);
+            this.label10.Location = new System.Drawing.Point(6, 133);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(80, 15);
             this.label10.TabIndex = 8;
@@ -163,7 +185,7 @@ namespace NEXTool
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 117);
+            this.label9.Location = new System.Drawing.Point(6, 118);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(131, 15);
             this.label9.TabIndex = 7;
@@ -172,7 +194,7 @@ namespace NEXTool
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 102);
+            this.label8.Location = new System.Drawing.Point(6, 103);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(80, 15);
             this.label8.TabIndex = 6;
@@ -181,7 +203,7 @@ namespace NEXTool
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 87);
+            this.label7.Location = new System.Drawing.Point(6, 88);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 15);
             this.label7.TabIndex = 5;
@@ -189,15 +211,15 @@ namespace NEXTool
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(49, 46);
+            this.textBox1.Location = new System.Drawing.Point(49, 50);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 23);
+            this.textBox1.Size = new System.Drawing.Size(258, 23);
             this.textBox1.TabIndex = 4;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 72);
+            this.label6.Location = new System.Drawing.Point(6, 73);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 15);
             this.label6.TabIndex = 3;
@@ -206,7 +228,7 @@ namespace NEXTool
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 49);
+            this.label5.Location = new System.Drawing.Point(6, 53);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 15);
             this.label5.TabIndex = 2;
@@ -234,7 +256,7 @@ namespace NEXTool
             // 
             this.button1.Location = new System.Drawing.Point(12, 41);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(203, 23);
+            this.button1.Size = new System.Drawing.Size(313, 23);
             this.button1.TabIndex = 5;
             this.button1.Text = "Load";
             this.button1.UseVisualStyleBackColor = true;
@@ -248,7 +270,7 @@ namespace NEXTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 341);
+            this.ClientSize = new System.Drawing.Size(744, 381);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
@@ -288,6 +310,8 @@ namespace NEXTool
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
     }
 }
 

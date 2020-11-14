@@ -11,7 +11,10 @@ namespace CyuNEX.PRUDP
     {
         private string _accessKey;
 
+        public StreamType SourceType;
         public byte Source;
+
+        public StreamType DestinationType;
         public byte Destination;
 
         public V0_Flags Flags;
@@ -36,8 +39,8 @@ namespace CyuNEX.PRUDP
             using (BinaryWriter writer = new BinaryWriter(stream))
             {
                 // TODO: HACK! Should not always be RVSecure!
-                writer.Write((byte)((byte)StreamType.RVSecure << 4 | Source));
-                writer.Write((byte)((byte)StreamType.RVSecure << 4 | Destination));
+                writer.Write((byte)((byte)SourceType << 4 | Source));
+                writer.Write((byte)((byte)DestinationType << 4 | Destination));
 
                 writer.Write((ushort)((ushort)Flags << 4 | (byte)Type));
 
@@ -67,8 +70,13 @@ namespace CyuNEX.PRUDP
             using (MemoryStream stream = new MemoryStream(buffer))
             using (BinaryReader reader = new BinaryReader(stream))
             {
-                Source = (byte)(reader.ReadByte() & 0xF);
-                Destination = (byte)(reader.ReadByte() & 0xF);
+                byte src = reader.ReadByte();
+                byte dst = reader.ReadByte();
+
+                SourceType = (StreamType)((src >> 4) & 0xF);
+                Source = (byte)(src & 0xF);
+                DestinationType = (StreamType)((dst >> 4) & 0xF);
+                Destination = (byte)(dst & 0xF);
 
                 ushort flagsType = reader.ReadUInt16();
 
@@ -93,7 +101,7 @@ namespace CyuNEX.PRUDP
                 if (payloadSize > 0)
                     Payload = reader.ReadBytes(payloadSize);
                 else
-                    Payload = new byte[0];
+                    Payload = new byte[payloadSize];
 
                 byte checksum = reader.ReadByte();
 
